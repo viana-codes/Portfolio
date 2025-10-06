@@ -13,7 +13,6 @@ const { data: projects } = await useAsyncData('projects', () => {
 <template>
   <UPageSection
     :title="page.projects.title"
-    :description="page.projects.description"
     :ui="{
       container: 'px-0 !pt-0 sm:gap-6 lg:gap-8',
       wrapper: 'mb-4',
@@ -21,6 +20,9 @@ const { data: projects } = await useAsyncData('projects', () => {
       description: 'text-center mt-2 text-pretty max-w-none text-sm sm:text-md lg:text-sm text-muted'
     }"
   >
+    <template #description>
+      <MDC :value="page.projects.description" unwrap="p" />
+    </template>
   <UPageSection
       :ui="{
         container: '!pt-0'
