@@ -43,7 +43,19 @@ defineProps<{
               :style="{ color: experience.company.color }"
             >
               <span class="font-medium">{{ experience.company.name }}</span>
-              <UIcon :name="experience.company.logo" />
+              <template v-if="experience.company.name === 'Celonis'">
+                <UColorModeImage
+                  :light="'/images/celonis_logo_light.png'"
+                  :dark="'/images/celonis_dark_blob.png'"
+                  alt="Celonis logo"
+                  width="32"
+                  height="32"
+                  class="w-4 h-4"
+                />
+              </template>
+              <template v-else>
+                <UIcon :name="experience.company.logo" />
+              </template>
             </div>
           </ULink>
         </Motion>
