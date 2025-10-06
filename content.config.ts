@@ -58,6 +58,7 @@ export default defineContentConfig({
           }))
         }),
         testimonials: z.array(createTestimonialSchema()),
+        projects: createBaseSchema(),
         blog: createBaseSchema(),
         faq: createBaseSchema().extend({
           categories: z.array(
