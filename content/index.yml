@@ -1,8 +1,8 @@
 seo:
-  title: "Emma Thompson - UX/UI Designer"
-  description: "Welcome to my portfolio! I'm Emma Thompson, a UX/UI designer and front-end developer based in Boston. I specialize in creating user-centered digital experiences that are both beautiful and functional."
-title: "Hey, I'm Emma Thompson UX/UI Designer"
-description: "I craft intuitive digital experiences where design meets functionality. Based in Boston, bringing ideas to life through code and creativity."
+  title: "Viana Kalversberg - Fullstack Engineer"
+  description: "Welcome to my portfolio! I'm Viana Kalversberg, a fullstack engineer based in Munich. I specialize in creating user-centered digital experiences that are both beautiful and functional."
+title: "Hey, I'm Viana Kalversberg"
+description: "A technical consultant and builder at heart, I thrive in ambiguity — blending data, systems thinking, and code to create meaningful solutions."
 hero:
   links:
     - label: "Use this template"
@@ -30,31 +30,38 @@ hero:
 about:
   title: "About Me"
   description: |
-    As a UX/UI designer and front-end developer with 6 years of experience, I leverage my Boston University Interactive Design degree to craft user-centered digital experiences.
-    My approach blends creative strategy with technical expertise, transforming concepts into functional, purposeful digital products that seamlessly integrate design and technology.
+    As a technical consultant with 7+ years of experience in enterprise systems, data architecture, and software engineering, I thrive in ambiguity — turning complex business and technical challenges into clear, scalable solutions.
+    With a foundation in process mining and over 2 years of experience building SaaS products used by thousands, I combine deep systems understanding, data fluency, and coding expertise to create impactful software.
 experience:
   title: Work Experience
   items:
-    - position: "Brand Designer at"
-      date: "2023 - Present"
+    - position: "Technical Co-founder at"
+      date: "2023 - 2025"
       company:
-        name: Nuxt
+        name: Funclass
         logo: "i-simple-icons-nuxtdotjs"
         url: "https://nuxt.com"
         color: "#00DC82"
-    - position: "Assets Designer at"
-      date: "2022 - 2023"
+    - position: "Freelance Consultant at various"
+      date: "2021 - 2024"
       company:
-        name: Raycast
+        name:  DAX40
         logo: "i-simple-icons-raycast"
-        url: "https://raycast.com"
+        url: "https://www.celonis.com"
         color: "#FF6363"
-    - position: "Senior UX/UI Designer at"
-      date: "2020 - 2021"
+    - position: "Data Scientist/ Consultant at"
+      date: "2019 - 2021"
       company:
-        name: Linear
+        name: Celonis
         logo: "i-simple-icons-linear"
-        url: "https://linear.app"
+        url: "https://www.celonis.com"
+        color: "#5E6AD2"
+    - position: "Junior Data Scientist at"
+      date: "2018 - 2019"
+      company:
+        name: Celonis
+        logo: "i-simple-icons-linear"
+        url: "https://www.celonis.com"
         color: "#5E6AD2"
 testimonials:
   - quote: "Emma's approach to UX design completely transformed our product. She has a rare ability to balance beautiful aesthetics with functional simplicity. The redesign not only looked better, but it reduced our customer support tickets by 40% and increased conversion rates across all key metrics."
