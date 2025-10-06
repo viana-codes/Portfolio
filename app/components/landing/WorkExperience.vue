@@ -40,7 +40,8 @@ defineProps<{
             </span>
             <div
               class="inline-flex items-center gap-1"
-              :style="{ color: experience.company.color }"
+              :class="experience.company.name === 'Celonis' ? 'text-black dark:text-white' : ''"
+              :style="experience.company.name === 'Celonis' ? null : { color: experience.company.color }"
             >
               <span class="font-medium">{{ experience.company.name }}</span>
               <template v-if="experience.company.name === 'Celonis'">
@@ -48,6 +49,16 @@ defineProps<{
                   :light="'/images/celonis_logo_light.png'"
                   :dark="'/images/celonis_dark_blob.png'"
                   alt="Celonis logo"
+                  width="32"
+                  height="32"
+                  class="w-4 h-4"
+                />
+              </template>
+              <template v-else-if="experience.company.name === 'Funclass'">
+                <UColorModeImage
+                  :light="'/images/Funclass_logo.png'"
+                  :dark="'/images/Funclass_logo.png'"
+                  alt="Funclass logo"
                   width="32"
                   height="32"
                   class="w-4 h-4"

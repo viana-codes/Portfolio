@@ -25,14 +25,9 @@ export default defineAppConfig({
   footer: {
     credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
     colorMode: false,
-    links: [{
-      'icon': 'i-simple-icons-discord',
-      'to': 'https://go.nuxt.com/discord',
-      'target': '_blank',
-      'aria-label': 'Nuxt on Discord'
-    }, {
+    links: [ {
       'icon': 'i-simple-icons-linkedin',
-      'to': 'https://go.nuxt.com/x',
+      'to': 'https://www.linkedin.com/in/viana-kalversberg/',
       'target': '_blank',
       'aria-label': 'Viana on LinkedIn'
     }, {
