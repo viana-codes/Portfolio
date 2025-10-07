@@ -8,6 +8,20 @@ defineProps<{
 const { data: projects } = await useAsyncData('projects', () => {
   return queryCollection('projects').all()
 })
+
+const formatProjectPeriod = (project: any) => {
+  try {
+    if (project?.startDate) {
+      const startYear = new Date(project.startDate).getFullYear()
+      const endYear = project.endDate ? new Date(project.endDate).getFullYear() : 'Present'
+      return `${startYear}–${endYear}`
+    }
+    if (project?.date) {
+      return String(new Date(project.date).getFullYear())
+    }
+  } catch {}
+  return ''
+}
 </script>
 
 <template>
@@ -53,7 +67,7 @@ const { data: projects } = await useAsyncData('projects', () => {
             </template>
             <template #leading>
               <span class="text-sm text-muted">
-                {{ new Date(project.date).getFullYear() }}
+                {{ formatProjectPeriod(project) }}
               </span>
             </template>
           <template #footer>

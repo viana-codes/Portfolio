@@ -16,6 +16,20 @@ const { data: projects } = await useAsyncData('projects', () => {
 
 const { global } = useAppConfig()
 
+const formatProjectPeriod = (project: any) => {
+  try {
+    if (project?.startDate) {
+      const startYear = new Date(project.startDate).getFullYear()
+      const endYear = project.endDate ? new Date(project.endDate).getFullYear() : 'Present'
+      return `${startYear}–${endYear}`
+    }
+    if (project?.date) {
+      return String(new Date(project.date).getFullYear())
+    }
+  } catch {}
+  return ''
+}
+
 useSeoMeta({
   title: page.value?.seo?.title || page.value?.title,
   ogTitle: page.value?.seo?.title || page.value?.title,
@@ -80,7 +94,7 @@ useSeoMeta({
         >
           <template #leading>
             <span class="text-sm text-muted">
-              {{ new Date(project.date).getFullYear() }}
+              {{ formatProjectPeriod(project) }}
             </span>
           </template>
           <template #footer>

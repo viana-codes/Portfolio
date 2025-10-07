@@ -30,7 +30,7 @@ hero:
 about:
   title: "About Me"
   description: |
-    I'm a technical consultant and engineer with 7+ years of experience working on enterprise systems, ERP data, and SaaS products.
+    I'm a technical consultant and engineer with 7+ years of experience working on enterprise systems, ERP data, developing and SaaS products.
     My background is in process mining - analyzing and modeling complex business data. Over the years I've grown into building scalable web applications myself. I enjoy solving ambiguous problems where systems, data, and product meet.
 experience:
   title: Work Experience
@@ -64,7 +64,7 @@ experience:
         url: "https://www.celonis.com"
         color: "#5E6AD2"
 testimonials:
-  - quote: "Working with Viana was the best decision we made for our project. She has a rare ability to balance beautiful aesthetics with functional simplicity. The redesign not only looked better, but it reduced our customer support tickets by 40% and increased conversion rates across all key metrics."
+  - quote: "It was a pleasure for us to work with Viana, who is not only a seasoned IT professional, knowing very well the Process and Data Mining domains, but - what is quite unique - she also has a gift to immerse quickly into new business domains. DGF's operational processes are typically quite complex to comprehend by consultants and yet Viana managed very quickly to become a peer for our subject matter experts in discussions of our business challenges. Viana's working style is not just to implement the requirements - she makes sure that she understands them and very often she shapes them, she comes up with her own proposals. And one more thing that does not happen often when working with consultants: Viana delivers either on-time or ahead of time - I was impressed many times with her fantastic speed of execution."
     author:
       name: 'Piotr Wójtowicz'
       description: 'Global Head of Business Process Architecture at DHL Global Forwarding'

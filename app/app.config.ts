@@ -5,8 +5,8 @@ export default defineAppConfig({
       light: '/images/IMG_0499.jpeg',
       alt: 'My profile picture'
     },
-    meetingLink: 'https://cal.com/',
-    email: 'ui-pro@nuxt.com',
+    meetingLink: 'https://calendly.com/viana-kalversberg-7y0/30min',
+    email: 'viana@kalversberg.com',
     available: true
   },
   ui: {
