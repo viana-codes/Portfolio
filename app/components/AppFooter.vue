@@ -19,6 +19,13 @@ const { footer } = useAppConfig()
           v-bind="{ size: 'xs', color: 'neutral', variant: 'ghost', ...link }"
         />
       </template>
+      <UButton
+        label="Imprint"
+        to="/imprint"
+        size="xs"
+        color="neutral"
+        variant="ghost"
+      />
     </template>
   </UFooter>
 </template>
