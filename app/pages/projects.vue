@@ -82,8 +82,6 @@ useSeoMeta({
       >
         <UPageCard
           :title="project.title"
-          :description="project.description"
-          :to="project.url"
           orientation="horizontal"
           variant="naked"
           :reverse="index % 2 === 1"
@@ -92,6 +90,9 @@ useSeoMeta({
             wrapper: 'max-sm:order-last'
           }"
         >
+          <template #description>
+            <MDC :value="project.description" unwrap="p" />
+          </template>
           <template #leading>
             <span class="text-sm text-muted">
               {{ formatProjectPeriod(project) }}
@@ -109,11 +110,16 @@ useSeoMeta({
               />
             </ULink>
           </template>
-          <img
-            :src="project.image"
-            :alt="project.title"
-            class="object-cover w-full h-48 rounded-lg"
-          >
+          <div class="w-full h-48 bg-default rounded-lg overflow-hidden flex items-center justify-center">
+            <NuxtImg
+              :src="project.image"
+              :alt="project.title"
+              class="max-w-full max-h-full object-contain"
+              format="webp"
+              sizes="sm:100vw md:800px lg:1000px"
+              :placeholder="25"
+            />
+          </div>
         </UPageCard>
       </Motion>
     </UPageSection>
