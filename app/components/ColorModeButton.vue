@@ -1,10 +1,19 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
-const nextTheme = computed(() => (colorMode.value === 'dark' ? 'light' : 'dark'))
+const modes = ['system', 'dark', 'light'] as const
+type Mode = typeof modes[number]
+
+const currentPreference = computed<Mode>(() => (colorMode.preference as Mode) ?? 'system')
+const nextPreference = computed<Mode>(() => modes[(modes.indexOf(currentPreference.value) + 1) % modes.length])
+
+const currentIcon = computed(() => {
+  if (currentPreference.value === 'system') return 'laptop'
+  return colorMode.value === 'dark' ? 'moon' : 'sun'
+})
 
 const switchTheme = () => {
-  colorMode.preference = nextTheme.value
+  colorMode.preference = nextPreference.value
 }
 
 const startViewTransition = (event: MouseEvent) => {
@@ -46,8 +55,8 @@ const startViewTransition = (event: MouseEvent) => {
 <template>
   <ClientOnly>
     <UButton
-      :aria-label="`Switch to ${nextTheme} mode`"
-      :icon="`i-lucide-${nextTheme === 'dark' ? 'sun' : 'moon'}`"
+      :aria-label="`Switch to ${nextPreference} mode`"
+      :icon="`i-lucide-${currentIcon}`"
       color="neutral"
       variant="ghost"
       size="sm"

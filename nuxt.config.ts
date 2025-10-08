@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@vueuse/nuxt',
+    '@nuxtjs/color-mode',
     'nuxt-og-image',
     'motion-v/nuxt'
   ],
@@ -34,5 +35,11 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
+  },
+
+  colorMode: {
+    preference: 'system',
+    fallback: 'light',
+    classSuffix: ''
   }
 })

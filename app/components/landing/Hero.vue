@@ -37,9 +37,9 @@ defineProps<{
           :light="global.picture?.light!"
           :dark="global.picture?.dark!"
           :alt="global.picture?.alt!"
-          width="144"
-          height="144"
-          class="w-18 h-18 rounded-full ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
+          width="192"
+          height="192"
+          class="w-24 h-24 rounded-full ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
         />
       </Motion>
     </template>
