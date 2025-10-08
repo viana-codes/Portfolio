@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { IndexCollectionItem } from '@nuxt/content'
 
 defineProps<{
@@ -7,6 +8,33 @@ defineProps<{
 
 const { data: projects } = await useAsyncData('projects', () => {
   return queryCollection('projects').all()
+})
+
+const uniqueTechStack = computed(() => {
+  const items: Array<{
+    key: string
+    icon?: string
+    logo?: string
+    label?: string
+    color?: string
+  }> = []
+  const seen = new Set<string>()
+
+  for (const project of projects.value ?? []) {
+    for (const tech of project?.techStack ?? []) {
+      if (!tech) {
+        continue
+      }
+      const key = tech.icon || tech.logo || tech.label
+      if (!key || seen.has(key)) {
+        continue
+      }
+      seen.add(key)
+      items.push({ key, ...tech })
+    }
+  }
+
+  return items
 })
 
 const formatProjectPeriod = (project: any) => {
@@ -35,7 +63,41 @@ const formatProjectPeriod = (project: any) => {
     }"
   >
     <template #description>
-      <MDC :value="page.projects.description" unwrap="p" />
+      <div
+        v-if="uniqueTechStack.length"
+        class="mt-2 flex flex-wrap items-center justify-center gap-2"
+      >
+        <span
+          v-for="tech in uniqueTechStack"
+          :key="tech.key"
+          class="inline-flex items-center gap-2 rounded-full bg-muted px-2.5 py-1 text-xs font-medium"
+        >
+          <UIcon
+            v-if="tech.icon"
+            :name="tech.icon"
+            class="h-4 w-4"
+            aria-hidden="true"
+            :style="tech.color ? { color: tech.color } : undefined"
+          />
+          <NuxtImg
+            v-else-if="tech.logo"
+            :src="tech.logo"
+            width="16"
+            height="16"
+            class="h-4 w-4 object-contain"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="text-muted">
+            {{ tech.label ?? tech.key }}
+          </span>
+        </span>
+      </div>
+      <MDC
+        v-else
+        :value="page.projects.description"
+        unwrap="p"
+      />
     </template>
   <UPageSection
       :ui="{

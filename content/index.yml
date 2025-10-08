@@ -2,12 +2,8 @@ seo:
   title: "Viana Kalversberg - Fullstack Engineer"
   description: "Welcome to my portfolio! I'm Viana Kalversberg, a fullstack engineer based in Munich. I specialize in creating user-centered digital experiences that are both beautiful and functional."
 title: "Hey, I'm Viana Kalversberg"
-description: "A technical consultant and builder at heart, I thrive in ambiguity — blending data, systems thinking, and code to create meaningful solutions."
+description: "I'm a technical consultant and full-stack engineer who thrives in ambiguity. Blending data, systems thinking, and code to create meaningful solutions."
 hero:
-  links:
-    - label: "Use this template"
-      to: https://github.com/nuxt-ui-templates/portfolio
-      color: "neutral"
   images:
     - src: /hero/random-1.avif
       alt: Random Image 1
