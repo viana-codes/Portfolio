@@ -4,13 +4,19 @@ image: /images/funclass_ai.png
 url: "#"
 tags: ["UI Design", "Front-End Dev", "Animation"]
 techStack:
+  - label: OpenAI
+    icon: i-simple-icons-openai
+    color: "#3776AB"
   - label: Python
     icon: i-simple-icons-python
     color: "#3776AB"
-  - label: FastAPI
-    icon: i-simple-icons-fastapi
-    color: "#009688"
-  - label: Nuxt
-    icon: i-simple-icons-nuxtdotjs
-    color: "#00DC82"
+  - label: Django REST
+    icon: i-simple-icons-django
+    color: "#092E20"
+  - label: Vue 3
+    icon: i-simple-icons-vuedotjs
+    color: "#41B883"
+  - label: TypeScript
+    icon: i-simple-icons-typescript
+    color: "#3178C6"
 date: "2025"

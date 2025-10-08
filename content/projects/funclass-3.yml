@@ -4,13 +4,22 @@ image: /images/funclass_zoom.svg
 url: "https://marketplace.zoom.us/apps/1D2uWKGATGSJq_0xusQ-jw"
 tags: ["UX Research", "UI Design", "Mobile App"]
 techStack:
-  - label: TypeScript
-    icon: i-simple-icons-typescript
-    color: "#3178C6"
   - label: Zoom
     icon: i-simple-icons-zoom
     color: "#2D8CFF"
   - label: Node.js
     icon: i-simple-icons-nodedotjs
     color: "#339933"
+  - label: Python
+    icon: i-simple-icons-python
+    color: "#3776AB"
+  - label: Django REST
+    icon: i-simple-icons-django
+    color: "#092E20"
+  - label: Vue 3
+    icon: i-simple-icons-vuedotjs
+    color: "#41B883"
+  - label: TypeScript
+    icon: i-simple-icons-typescript
+    color: "#3178C6"
 date: "2025"

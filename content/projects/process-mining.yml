@@ -4,14 +4,24 @@ image: /images/celonis_1.png
 url: "#"
 tags: ["UI Design", "Front-End Dev", "Animation"]
 techStack:
-  - label: React
-    icon: i-simple-icons-react
-    color: "#61DAFB"
-  - label: D3.js
-    icon: i-simple-icons-d3dotjs
-    color: "#F9A03C"
-  - label: TailwindCSS
-    icon: i-simple-icons-tailwindcss
-    color: "#38B2AC"
+  - label: Celonis
+    logo: /images/celonis_logo_light.png
+  - label: SQL
+    icon: i-simple-icons-microsoftsqlserver
+    color: "#CC2927"
+  - label: Python
+    icon: i-simple-icons-python
+    color: "#3776AB"  
+  - label: CargoWise
+    logo: /images/cargowise.png
+  - label: SAP ECC
+    icon: i-simple-icons-sap
+    color: "#0FAAFF"
+  - label: SAP S/4HANA
+    icon: i-simple-icons-sap
+    color: "#0FAAFF"
+  - label: Microsoft Dynamics
+    logo: /images/Dynamics365-2.png
+    color: "#0FAAFF"
 startDate: "2021-01-01"
 endDate: "2024-03-01"

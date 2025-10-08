@@ -86,6 +86,15 @@ const formatProjectPeriod = (project: any) => {
                     aria-hidden="true"
                     :style="tech.color ? { color: tech.color } : undefined"
                   />
+                  <NuxtImg
+                    v-else-if="tech.logo"
+                    :src="tech.logo"
+                    width="16"
+                    height="16"
+                    class="h-4 w-4 object-contain"
+                    alt=""
+                    aria-hidden="true"
+                  />
                   <span class="text-muted">
                     {{ tech.label }}
                   </span>
@@ -103,7 +112,7 @@ const formatProjectPeriod = (project: any) => {
               </ULink>
             </div>
           </template>
-          <div class="w-full h-48 bg-default rounded-lg overflow-hidden flex items-center justify-center">
+          <div class="w-full h-60 sm:h-64 lg:h-72 bg-default rounded-lg overflow-hidden flex items-center justify-center">
             <NuxtImg
               :src="project.image"
               :alt="project.title"

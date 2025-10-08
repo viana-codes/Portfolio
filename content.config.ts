@@ -86,6 +86,7 @@ export default defineContentConfig({
         techStack: z.array(z.object({
           label: z.string().nonempty(),
           icon: z.string().optional(),
+          logo: z.string().optional(),
           color: z.string().optional()
         })).optional(),
         date: z.date().optional(),
