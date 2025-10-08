@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import type { IndexCollectionItem } from '@nuxt/content'
 
 defineProps<{
@@ -9,6 +9,12 @@ defineProps<{
 const { data: projects } = await useAsyncData('projects', () => {
   return queryCollection('projects').all()
 })
+
+const isImageModalOpen = ref(false)
+const selectedProjectImage = ref<{
+  src: string
+  alt: string
+} | null>(null)
 
 const uniqueTechStack = computed(() => {
   const items: Array<{
@@ -50,6 +56,41 @@ const formatProjectPeriod = (project: any) => {
   } catch {}
   return ''
 }
+
+const showProjectImage = (project: any) => {
+  if (!project?.image) {
+    return
+  }
+  selectedProjectImage.value = {
+    src: project.image,
+    alt: project.title ?? 'Project image'
+  }
+  isImageModalOpen.value = true
+}
+
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') {
+    isImageModalOpen.value = false
+  }
+}
+
+onMounted(() => {
+  if (process.client) {
+    window.addEventListener('keydown', handleKeydown)
+  }
+})
+
+onBeforeUnmount(() => {
+  if (process.client) {
+    window.removeEventListener('keydown', handleKeydown)
+  }
+})
+
+watch(isImageModalOpen, (isOpen) => {
+  if (!isOpen) {
+    selectedProjectImage.value = null
+  }
+})
 </script>
 
 <template>
@@ -174,18 +215,65 @@ const formatProjectPeriod = (project: any) => {
               </ULink>
             </div>
           </template>
-          <div class="w-full h-60 sm:h-64 lg:h-72 bg-default rounded-lg overflow-hidden flex items-center justify-center">
+          <button
+            type="button"
+            class="w-full h-60 sm:h-64 lg:h-72 bg-default rounded-lg overflow-hidden flex items-center justify-center transition hover:ring-2 hover:ring-primary focus-visible:ring-2 focus-visible:ring-primary"
+            :aria-label="`View larger image of ${project.title}`"
+            @click="showProjectImage(project)"
+          >
             <NuxtImg
               :src="project.image"
               :alt="project.title"
-              class="max-w-full max-h-full object-contain"
+              class="max-w-full max-h-full object-contain transition duration-300 hover:scale-105"
               format="webp"
               sizes="sm:100vw md:800px lg:1000px"
               :placeholder="25"
             />
-          </div>
+          </button>
         </UPageCard>
       </Motion>
     </UPageSection>
   </UPageSection>
+  <Teleport to="body">
+    <Transition name="fade">
+      <div
+        v-if="isImageModalOpen && selectedProjectImage"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6 backdrop-blur"
+        role="dialog"
+        :aria-label="`Larger preview of ${selectedProjectImage.alt}`"
+        aria-modal="true"
+        @click.self="isImageModalOpen = false"
+      >
+        <div class="relative max-h-[85vh] w-full max-w-4xl">
+          <UButton
+            icon="i-lucide-x"
+            color="neutral"
+            variant="ghost"
+            class="absolute right-2 top-2 z-10 size-8"
+            aria-label="Close image preview"
+            @click="isImageModalOpen = false"
+          />
+          <NuxtImg
+            :src="selectedProjectImage.src"
+            :alt="selectedProjectImage.alt"
+            class="max-h-[85vh] w-full rounded-lg object-contain"
+            format="webp"
+            sizes="sm:100vw md:1200px"
+          />
+        </div>
+      </div>
+    </Transition>
+  </Teleport>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
