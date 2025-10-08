@@ -1,5 +1,5 @@
 title: Funclass - AI Feedback for Language Learning
-description: Designed and developed the user interface for an indie music streaming service, focusing on discovery features and creating a unique, engaging listening experience using custom audio visualizations.
+description: An AI-powered feedback feature that analyzes Zoom lesson transcripts to evaluate students' English-speaking performance. It provides curriculum-aligned insights on fluency, vocabulary, and grammar, transforming raw transcripts into structured, visual progress summaries.
 image: /images/funclass_ai.png
 url: "#"
 tags: ["UI Design", "Front-End Dev", "Animation"]
