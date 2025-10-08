@@ -82,7 +82,17 @@ defineProps<{
           delay: 0.3
         }"
       >
-        {{ page.description }}
+        <div class="mb-4 flex items-center justify-center gap-2 text-sm text-muted">
+          <UIcon
+            name="i-lucide-map-pin"
+            class="size-4"
+            aria-hidden="true"
+          />
+          <span>Munich, Germany</span>
+        </div>
+        <p class="text-center">
+          {{ page.description }}
+        </p>
       </Motion>
     </template>
 
