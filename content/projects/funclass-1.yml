@@ -6,5 +6,27 @@ description: |
 image: /images/funclass_history.png
 url: "https://getfunclass.com/"
 tags: ["UX Design", "UI Design"]
+techStack:
+  - label: Python
+    icon: i-simple-icons-python
+    color: "#3776AB"
+  - label: Django REST
+    icon: i-simple-icons-django
+    color: "#092E20"
+  - label: Vue 3
+    icon: i-simple-icons-vuejs
+    color: "#092E20"
+  - label: TypeScript
+    icon: i-simple-icons-typescript
+    color: "#092E20"
+  - label: AWS
+    icon: i-simple-icons-aws
+    color: "#092E20"
+  - label: Postgres
+    icon: i-simple-icons-postgresql
+    color: "#092E20"
+  - label: Postgres
+    icon: i-simple-icons-postgresql
+    color: "#092E20"
 startDate: "2023-01-01"
 endDate: "2025-12-31"

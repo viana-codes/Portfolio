@@ -3,4 +3,14 @@ description: Designed and developed the user interface for an indie music stream
 image: /images/funclass_ai.png
 url: "#"
 tags: ["UI Design", "Front-End Dev", "Animation"]
+techStack:
+  - label: Python
+    icon: i-simple-icons-python
+    color: "#3776AB"
+  - label: FastAPI
+    icon: i-simple-icons-fastapi
+    color: "#009688"
+  - label: Nuxt
+    icon: i-simple-icons-nuxtdotjs
+    color: "#00DC82"
 date: "2025"

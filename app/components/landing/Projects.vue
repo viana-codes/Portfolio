@@ -69,16 +69,39 @@ const formatProjectPeriod = (project: any) => {
               </span>
             </template>
           <template #footer>
-            <ULink
-              :to="project.url"
-              class="text-sm text-primary flex items-center"
-            >
-              View Project
-              <UIcon
-                name="i-lucide-arrow-right"
-                class="size-4 text-primary transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100"
-              />
-            </ULink>
+            <div class="flex flex-col gap-3">
+              <div
+                v-if="project?.techStack?.length"
+                class="flex flex-wrap items-center gap-2"
+              >
+                <span
+                  v-for="tech in project.techStack"
+                  :key="tech.label"
+                  class="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium"
+                >
+                  <UIcon
+                    v-if="tech.icon"
+                    :name="tech.icon"
+                    class="h-4 w-4"
+                    aria-hidden="true"
+                    :style="tech.color ? { color: tech.color } : undefined"
+                  />
+                  <span class="text-muted">
+                    {{ tech.label }}
+                  </span>
+                </span>
+              </div>
+              <ULink
+                :to="project.url"
+                class="text-sm text-primary flex items-center"
+              >
+                View Project
+                <UIcon
+                  name="i-lucide-arrow-right"
+                  class="size-4 text-primary transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100"
+                />
+              </ULink>
+            </div>
           </template>
           <div class="w-full h-48 bg-default rounded-lg overflow-hidden flex items-center justify-center">
             <NuxtImg

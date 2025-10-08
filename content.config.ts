@@ -83,6 +83,11 @@ export default defineContentConfig({
         image: z.string().nonempty().editor({ input: 'media' }),
         url: z.string().nonempty(),
         tags: z.array(z.string()),
+        techStack: z.array(z.object({
+          label: z.string().nonempty(),
+          icon: z.string().optional(),
+          color: z.string().optional()
+        })).optional(),
         date: z.date().optional(),
         startDate: z.date().optional(),
         endDate: z.date().optional()
