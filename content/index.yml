@@ -2,7 +2,7 @@ seo:
   title: "Viana Kalversberg - Fullstack Engineer"
   description: "Welcome to my portfolio! I'm Viana Kalversberg, a fullstack engineer based in Munich. I specialize in creating user-centered digital experiences that are both beautiful and functional."
 title: "Hey, I'm Viana Kalversberg"
-description: "I'm a technical consultant and full-stack engineer who thrives in ambiguity. Blending data, systems thinking, and code to create meaningful solutions."
+description: "Full-stack engineer and builder at heart"
 hero:
   images:
     - src: /hero/random-1.avif
@@ -26,8 +26,8 @@ hero:
 about:
   title: "About Me"
   description: |
-    I'm a technical consultant and engineer with 7+ years of experience working on enterprise systems, ERP data, developing and SaaS products.
-    My background is in process mining - analyzing and modeling complex business data. Over the years I've grown into building scalable web applications myself. I enjoy solving ambiguous problems where systems, data, and product meet.
+    I'm a software engineer with 7+ years of experience working on enterprise systems, ERP data, developing and SaaS products.
+    My roots are in process mining - analyzing and modeling complex business data. Over the years I've grown into building scalable web applications myself. I enjoy solving ambiguous problems where systems, data, and product meet.
 experience:
   title: Work Experience
   items:
@@ -46,17 +46,10 @@ experience:
         url: ""
         color: "#5E6AD2"
     - position: "Data Scientist/ Consultant at"
-      date: "2019 - 2021"
+      date: "2018 - 2021"
       company:
         name: Celonis
         logo: "i-simple-icons-linear"
-        url: "https://www.celonis.com"
-        color: "#5E6AD2"
-    - position: "Junior Data Scientist at"
-      date: "2018 - 2019"
-      company:
-        name: Celonis
-        logo: ""
         url: "https://www.celonis.com"
         color: "#5E6AD2"
 testimonials:
