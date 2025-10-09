@@ -57,8 +57,11 @@ const formatProjectPeriod = (project: any) => {
   return ''
 }
 
+const isGif = (src?: string | null): boolean => typeof src === 'string' && src.toLowerCase().endsWith('.gif')
+const isPdf = (src?: string | null): boolean => typeof src === 'string' && src.toLowerCase().endsWith('.pdf')
+
 const showProjectImage = (project: any) => {
-  if (!project?.image) {
+  if (!project?.image || isPdf(project.image)) {
     return
   }
   selectedProjectImage.value = {
@@ -215,7 +218,42 @@ watch(isImageModalOpen, (isOpen) => {
               </ULink>
             </div>
           </template>
+          <div
+            v-if="project.video"
+            class="w-full h-60 sm:h-64 lg:h-72 bg-default rounded-lg overflow-hidden flex items-center justify-center"
+          >
+            <video
+              :src="project.video"
+              controls
+              loop
+              muted
+              playsinline
+              class="h-full w-full object-contain"
+            ></video>
+          </div>
+          <div
+            v-else-if="project.image && isPdf(project.image)"
+            class="w-full h-60 sm:h-64 lg:h-72 bg-default rounded-lg overflow-hidden flex items-center justify-center"
+          >
+            <object
+              :data="project.image"
+              type="application/pdf"
+              class="h-full w-full"
+            >
+              <div class="flex h-full w-full flex-col items-center justify-center gap-2 p-4 text-center text-muted text-sm">
+                <span>PDF preview unavailable.</span>
+                <ULink
+                  :to="project.image"
+                  target="_blank"
+                  class="text-primary underline underline-offset-2"
+                >
+                  Open PDF
+                </ULink>
+              </div>
+            </object>
+          </div>
           <button
+            v-else-if="project.image && !isPdf(project.image)"
             type="button"
             class="w-full h-60 sm:h-64 lg:h-72 bg-default rounded-lg overflow-hidden flex items-center justify-center transition hover:ring-2 hover:ring-primary focus-visible:ring-2 focus-visible:ring-primary"
             :aria-label="`View larger image of ${project.title}`"
@@ -225,11 +263,17 @@ watch(isImageModalOpen, (isOpen) => {
               :src="project.image"
               :alt="project.title"
               class="max-w-full max-h-full object-contain transition duration-300 hover:scale-105"
-              format="webp"
+              :format="isGif(project.image) ? undefined : 'webp'"
               sizes="sm:100vw md:800px lg:1000px"
               :placeholder="25"
             />
           </button>
+          <div
+            v-else
+            class="w-full h-60 sm:h-64 lg:h-72 bg-default rounded-lg overflow-hidden flex items-center justify-center text-muted text-sm"
+          >
+            Preview coming soon
+          </div>
         </UPageCard>
       </Motion>
     </UPageSection>
@@ -257,7 +301,7 @@ watch(isImageModalOpen, (isOpen) => {
             :src="selectedProjectImage.src"
             :alt="selectedProjectImage.alt"
             class="max-h-[85vh] w-full rounded-lg object-contain"
-            format="webp"
+            :format="isGif(selectedProjectImage.src) ? undefined : 'webp'"
             sizes="sm:100vw md:1200px"
           />
         </div>

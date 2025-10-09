@@ -1,6 +1,6 @@
 title: Funclass - Building China Infrastructure
 description: Built the China infrastructure for Funclass, including meeting server infrastructure and frontend, fully integrated with the global AWS infrastructure, ensuring low latency across the Great Firewall. Navigated complex technical and compliance challenges such as isolated network environments, ICP licensing, and navigating costs.
-image: /images/cdn_china.png
+image: /images/aws_china.png
 url: "https://funclass.com.cn"
 tags: ["Developer Tools", "UX Design", "Nuxt", "Design System", "Internal Tools"]
 techStack:

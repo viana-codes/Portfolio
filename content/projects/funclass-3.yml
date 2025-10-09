@@ -1,6 +1,6 @@
 title: Funclass - Zoom App
 description: Built Funclass's Zoom App, published in the Zoom App Marketplace after passing Zoom's architectural and security reviews. The app securely syncs session data and authentication states between Zoom and the Funclass web platform, enabling automatic attendance tracking and seamless integration of Funclass's gamified learning features directly within Zoom meetings.
-image: /images/funclass_zoom.svg
+image: /videos/zoom_app_recording.gif
 url: "https://marketplace.zoom.us/apps/1D2uWKGATGSJq_0xusQ-jw"
 tags: ["UX Research", "UI Design", "Mobile App"]
 techStack:

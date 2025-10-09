@@ -30,6 +30,9 @@ const formatProjectPeriod = (project: any) => {
   return ''
 }
 
+const isGif = (src?: string | null): boolean => typeof src === 'string' && src.toLowerCase().endsWith('.gif')
+const isPdf = (src?: string | null): boolean => typeof src === 'string' && src.toLowerCase().endsWith('.pdf')
+
 useSeoMeta({
   title: page.value?.seo?.title || page.value?.title,
   ogTitle: page.value?.seo?.title || page.value?.title,
@@ -95,14 +98,47 @@ useSeoMeta({
             </ULink>
           </template>
           <div class="w-full h-48 bg-default rounded-lg overflow-hidden flex items-center justify-center">
+            <video
+              v-if="project.video"
+              :src="project.video"
+              controls
+              loop
+              muted
+              playsinline
+              class="h-full w-full object-contain"
+            ></video>
+            <object
+              v-else-if="project.image && isPdf(project.image)"
+              :data="project.image"
+              type="application/pdf"
+              class="h-full w-full"
+            >
+              <div class="flex flex-col items-center justify-center gap-2 p-4 text-center text-muted text-sm">
+                <span>PDF preview unavailable.</span>
+                <ULink
+                  :to="project.image"
+                  target="_blank"
+                  class="text-primary underline underline-offset-2"
+                >
+                  Open PDF
+                </ULink>
+              </div>
+            </object>
             <NuxtImg
+              v-else-if="project.image"
               :src="project.image"
               :alt="project.title"
               class="max-w-full max-h-full object-contain"
-              format="webp"
+              :format="isGif(project.image) ? undefined : 'webp'"
               sizes="sm:100vw md:800px lg:1000px"
               :placeholder="25"
             />
+            <span
+              v-else
+              class="text-muted text-sm"
+            >
+              Preview coming soon
+            </span>
           </div>
         </UPageCard>
       </Motion>
