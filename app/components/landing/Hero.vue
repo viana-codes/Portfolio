@@ -13,7 +13,7 @@ defineProps<{
     :ui="{
       headline: 'flex items-center justify-center',
       title: 'text-shadow-md max-w-lg mx-auto',
-      links: '!mt-4 flex-col justify-center items-center'
+      links: '!mt-0 flex-col justify-center items-center'
     }"
   >
     <template #headline>
@@ -82,7 +82,7 @@ defineProps<{
           delay: 0.3
         }"
       >
-        <div class="mb-4 flex items-center justify-center gap-2 text-sm text-muted">
+        <div class="mb-1 flex items-center justify-center gap-2 text-sm text-muted">
           <UIcon
             name="i-lucide-map-pin"
             class="size-4"
@@ -114,7 +114,7 @@ defineProps<{
         }"
       >
         <div
-          v-if="page.hero.links"
+          
           class="flex items-center gap-2"
         >
           <UButton
