@@ -2,7 +2,7 @@ seo:
   title: "Viana Kalversberg - Fullstack Engineer"
   description: "Welcome to my portfolio! I'm Viana Kalversberg, a fullstack engineer based in Munich. I specialize in creating user-centered digital experiences that are both beautiful and functional."
 title: "Hey, I'm Viana Kalversberg"
-description: "Full-stack Engineer and builder at heart"
+description: "Full-stack engineer and builder at heart"
 hero:
   images:
     - src: /hero/random-1.avif
@@ -60,7 +60,7 @@ testimonials:
       avatar:
         src: '/images/piotr_image.jpeg'
         srcset: '/images/piotr_image.jpeg 2x'
-  - quote: "Viana consistently demonstrated exceptional expertise in process mining and ERP data structures. Her deep understanding of enterprise systems and ability to model complex processes enabled her to identify value opportunities and successfully acquire and deliver multiple process mining projects. She combines strong analytical thinking with clear communication — an exceptional ability to connect technical detail with business value."
+  - quote: "Viana consistently demonstrated exceptional expertise in process mining and ERP data structures. Her deep understanding of enterprise systems and ability to model complex processes enabled her to identify value opportunities and successfully acquire and deliver multiple process mining projects. She combines strong analytical thinking with clear communication, an exceptional ability to connect technical detail with business value."
     author:
       name: 'Andrei Costea'
       description: 'Managing Director at Berata GmbH'
