@@ -19,8 +19,8 @@ useHead({
 
 useSeoMeta({
   titleTemplate: '%s Viana Kalversberg',
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/portfolio-light.png',
-  twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/portfolio-light.png',
+  ogImage: 'https://www.kalversberg.com/images/seo/portfolio_preview.png',
+  twitterImage: 'https://www.kalversberg.com/images/seo/portfolio_preview.png',
   twitterCard: 'summary_large_image'
 })
 
